@@ -74,7 +74,7 @@ class BTKbBluezProfile(dbus.service.Object):
 class BTKbDevice():
     #change these constants 
     MY_ADDRESS="00:00:00:00:00:00"
-    MY_DEV_NAME="Ubiwrite"
+    MY_DEV_NAME="Raspberry_Pitooth_BTKb"
 
     #define some constants
     P_CTRL =17  #Service port - must match port configured in SDP record
@@ -156,8 +156,8 @@ class BTKbDevice():
         self.sinterrupt=BluetoothSocket(L2CAP)
 
         #bind these sockets to a port - port zero to select next available		
-    MY_ADDRESS="B8:27:EB:45:53:EB"
-    MY_ADDRESS="B8:27:EB:45:53:EB"
+        self.scontrol.bind((self.MY_ADDRESS,self.P_CTRL))
+        self.sinterrupt.bind((self.MY_ADDRESS,self.P_INTR ))
 
         #Start listening on the server sockets 
         self.scontrol.listen(1) # Limit of 1 connection
