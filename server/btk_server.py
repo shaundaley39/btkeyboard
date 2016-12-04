@@ -156,8 +156,8 @@ class BTKbDevice():
         self.sinterrupt=BluetoothSocket(L2CAP)
 
         #bind these sockets to a port - port zero to select next available		
-        self.scontrol.bind((self.MY_ADDRESS,self.P_CTRL))
-        self.sinterrupt.bind((self.MY_ADDRESS,self.P_INTR ))
+    MY_ADDRESS="B8:27:EB:45:53:EB"
+    MY_ADDRESS="B8:27:EB:45:53:EB"
 
         #Start listening on the server sockets 
         self.scontrol.listen(1) # Limit of 1 connection
