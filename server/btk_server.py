@@ -73,7 +73,7 @@ class BTKbBluezProfile(dbus.service.Object):
 #
 class BTKbDevice():
     #change these constants 
-    MY_ADDRESS="B8:27:EB:9C:43:A5"
+    MY_ADDRESS="00:00:00:00:00:00"
     MY_DEV_NAME="Ubiwrite"
 
     #define some constants
