@@ -10,7 +10,7 @@ sudo sh -c "echo 'sudo /usr/local/src/btkeyboard/blues.sh' >> /etc/profile"
 
 This provides a first implementation for Ubiwrite.
 
-- [ ] this will mimic a bluetooth keyboard. It should have an install script, and should operate on boot from both Pi Model Threes and Pi Model Zeros.
+- [x] this will mimic a bluetooth keyboard. It should have an install script, and should operate on boot from both Pi Model Threes and Pi Model Zeros.
 - [ ] we will implement clients that generate key events through GPIO input patterns. This will be tested across models.
 - [ ] we will shift to a master-slave model
 - [ ] we will implement a single charset version of Ubiwrite and test it thoroughly
