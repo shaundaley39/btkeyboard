@@ -13,12 +13,12 @@ sudo /etc/init.d/bluetooth stop
 sudo /usr/sbin/bluetoothd -p time &
 sudo hciconfig hcio up
 # here: set bluetooth address hard
-sed -i "/MY_ADDRESS=/c\    MY_ADDRESS=\"$BD_ADDRESS\"" server/btk_server.py
+sed -i "/MY_ADDRESS=/c\    MY_ADDRESS=\"$BD_ADDRESS\"" /usr/local/src/btkeyboard/server/btk_server.py
 
-sudo python server/btk_server.py > results.txt 2>errors.log &
+sudo python /usr/local/src/btkeyboard/server/btk_server.py > /usr/local/src/btkeyboard/results.txt 2>/usr/local/src/btkeyboard/errors.log &
 
 # next, we need an agent and pairing
-./agent.sh
+/usr/local/src/btkeyboard/agent.sh
 # then we run some client:
-sudo python keyboard/kb_client.py
+sudo python /usr/local/src/btkeyboard/keyboard/kb_client.py
 # we will want our client to check whethe it's in a zero or a three, for pin purposes
