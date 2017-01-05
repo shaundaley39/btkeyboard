@@ -1,5 +1,12 @@
 # Readme
-## 
+
+## Install
+```
+sudo cp -R ../btkeyboard /usr/local/src/btkeyboard
+sudo sh -c "echo 'sudo /usr/local/src/btkeyboard/blues.sh' >> /etc/profile"
+```
+
+## To Do
 
 This provides a first implementation for Ubiwrite.
 
