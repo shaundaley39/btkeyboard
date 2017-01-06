@@ -20,5 +20,8 @@ sudo python /usr/local/src/btkeyboard/server/btk_server.py > /usr/local/src/btke
 # next, we need an agent and pairing
 /usr/local/src/btkeyboard/agent.sh
 # then we run some client:
-sudo python /usr/local/src/btkeyboard/keyboard/kb_client.py
+sudo python /usr/local/src/btkeyboard/keyboard/ping_client.py
+#sudo python keyboard/ping_client.py
+#sudo python keyboard/kb_client.py
+
 # we will want our client to check whethe it's in a zero or a three, for pin purposes
