@@ -16,8 +16,8 @@ import time
 import keystates # maps characters and actions to keyboard keodes
 
 #Define a client to listen to local key events
-class Keyboard( name ):
-	def __init__(self):
+class Keyboard():
+	def __init__(self, name):
 		self.name = name
 		print "setting up DBus Client"	
 		self.bus = dbus.SystemBus()
