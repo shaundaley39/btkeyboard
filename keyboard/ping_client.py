@@ -16,7 +16,7 @@ import time
 import evdev # used to get input from the keyboard
 from evdev import *
 import keymap # used to map evdev input to hid keodes
-
+import keystates # maps characters and actions to keyboard keodes
 
 
 #Define a client to listen to local key events
@@ -77,10 +77,19 @@ class Keyboard():
 	def event_loop(self):
 		while True:
 			time.sleep(3)
-			self.change_state(11)
-			self.send_input()
-                        self.change_state(0)
-                        self.send_input()
+                        self.send_action("NEWTAB")
+			self.send_action("H")
+                        self.send_action("e")
+                        self.send_action("l")
+                        self.send_action("l")
+                        self.send_action("o")
+                        self.send_action(" ")
+                        self.send_action("W")
+                        self.send_action("o")
+                        self.send_action("r")
+                        self.send_action("l")
+                        self.send_action("d")
+                        self.send_action("!")
 
 	#forward keyboard events to the dbus service
    	def send_input(self):
@@ -93,6 +102,17 @@ class Keyboard():
 	
 
 		self.iface.send_keys(int(bin_str,2),self.state[4:10]  )
+
+        def send_action(self, action):
+		self.send_state( keystates[action]
+		self.send_state( keystates[ "DEFAULT" ]
+
+        def send_state(self, state):
+                bin_str=""
+                element=state[2]
+                for bit in element:
+                        bin_str += str(bit)
+                self.iface.send_keys(int(bin_str,2), state[4:10]  )
 
 
 
