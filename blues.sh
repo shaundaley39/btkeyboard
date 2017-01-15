@@ -20,7 +20,7 @@ sudo python /usr/local/src/btkeyboard/server/btk_server.py > /usr/local/src/btke
 # next, we need an agent and pairing
 /usr/local/src/btkeyboard/agent.sh
 # then we run some client:
-sudo python /usr/local/src/btkeyboard/keyboard/ping_client.py
+sudo python /usr/local/src/btkeyboard/keyboard/ping_client.py $MODEL
 #sudo python keyboard/ping_client.py
 #sudo python keyboard/kb_client.py
 
