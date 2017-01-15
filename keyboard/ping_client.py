@@ -104,8 +104,8 @@ class Keyboard():
 		self.iface.send_keys(int(bin_str,2),self.state[4:10]  )
 
         def send_action(self, action):
-		self.send_state( keystates[action]
-		self.send_state( keystates[ "DEFAULT" ]
+		self.send_state( keystates[action])
+		self.send_state( keystates[ "DEFAULT" ])
 
         def send_state(self, state):
                 bin_str=""
