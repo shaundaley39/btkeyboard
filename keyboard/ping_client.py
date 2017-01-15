@@ -16,8 +16,9 @@ import time
 import keystates # maps characters and actions to keyboard keodes
 
 #Define a client to listen to local key events
-class Keyboard():
+class Keyboard( name ):
 	def __init__(self):
+		self.name = name
 		print "setting up DBus Client"	
 		self.bus = dbus.SystemBus()
 		self.btkservice = self.bus.get_object('org.yaptb.btkbservice','/org/yaptb/btkbservice')
@@ -54,6 +55,9 @@ class Keyboard():
                         self.send_action("l")
                         self.send_action("d")
                         self.send_action("!")
+                        self.send_action(" ")
+			for c in self.name:
+				self.send_action(c)
 
         def send_action(self, action):
 		self.send_state( keystates.getcode (action ))
@@ -70,7 +74,7 @@ if __name__ == "__main__":
 
 	print "Setting up keyboard"
 
-	kb = Keyboard()
+	kb = Keyboard( sys.argv[1] )
 
 	print "starting event loop"
 	kb.event_loop()
