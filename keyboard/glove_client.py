@@ -14,6 +14,7 @@ import dbus.service
 import dbus.mainloop.glib
 import time
 import keystates # maps characters and actions to keyboard keodes
+from gpio_glove import GPIO_Glove
 
 #Define a client to listen to local key events
 class Keyboard():
@@ -58,6 +59,13 @@ class Keyboard():
                         self.send_action(" ")
 			for c in self.name:
 				self.send_action(c)
+	def send_input(self, number)
+		lettermap = {1:"h",2:"e",3:"l",4:"o",5:"a",6:"e",7:"p",8:" "}
+		self.send_state( keystates.getcode ( lettermap( int(number) ) ))
+
+	def start_glove(self):
+		glove = GPIO_Glove( self.send_input )
+		
 
         def send_action(self, action):
 		self.send_state( keystates.getcode (action ))
@@ -77,4 +85,5 @@ if __name__ == "__main__":
 	kb = Keyboard( sys.argv[1] )
 
 	print "starting event loop"
-	kb.event_loop()
+#	kb.event_loop()
+	kb.start_glove()
